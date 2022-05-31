@@ -28,11 +28,15 @@ g = @(t,x,y) -(((B^2)*(L^2)*y)/(R*M));
 [t,x,y] = rungekuttadoble(f, g, t0, tf, x0, y0, n)
 
 figure(1)
+title('Desplazamiento con respecto al tiempo','fontweight','bold','fontsize',16)
+xlabel('Tiempo (s)')
+ylabel('Desplazamiento (m)')
 hold on
 g1 = plot(t,y)
-l1 = "Velocidad"
+l1 = "d2x/dt2"
 g2 = plot(t,x)
-l2 = "Aceleración"
+l2 = "dx/dt"
+hold off
 
 
 legend([g1,g2], [l1,l2]);
